@@ -1,0 +1,194 @@
+{
+  "title": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "heading1",
+        "content": {
+          "text": "Design"
+        }
+      }
+    ]
+  },
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "fix"
+  },
+  "hidepagetitle": {
+    "__TYPE__": "BooleanContent",
+    "value": false
+  },
+  "excerpt": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Incididunt quis consequat laboris fugiat cupidatat ullamco velit elit."
+        }
+      }
+    ]
+  },
+  "featuredimage": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+      "width": 4172,
+      "height": 4000
+    },
+    "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+    "width": 4172,
+    "height": 4000,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "metadescription": {
+    "__TYPE__": "FieldContent",
+    "value": "visit",
+    "type": "Text"
+  },
+  "metaimage": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+      "width": 3500,
+      "height": 2338
+    },
+    "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+    "width": 3500,
+    "height": 2338,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "canonicalurl": {
+    "__TYPE__": "FieldContent",
+    "value": "shine",
+    "type": "Text"
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "content$c191cc35-8d82-4b1d-8d82-f13e3703df1d",
+        "name": "content",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "content": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Consectetur dolor esse esse ullamco laborum consequat enim occaecat aute et ipsum anim veniam commodo culpa. In velit ut ad ea ad sit irure nulla velit consequat aliqua et."
+                  }
+                }
+              ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "hero$28e12650-c690-4229-838c-9f0a1d996861",
+        "name": "hero",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "backgroundimage": {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+                "width": 3810,
+                "height": 5715
+              },
+              "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+              "width": 3810,
+              "height": 5715,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            },
+            "heroheading": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading2",
+                  "content": {
+                    "text": "Supper"
+                  }
+                }
+              ]
+            },
+            "herodescription": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Tempor ad adipisicing velit in non aliqua enim pariatur adipisicing culpa dolore cupidatat consectetur aliqua velit. Cupidatat consequat magna cillum ea nulla qui cupidatat aliquip. Sunt culpa velit aute consequat do consectetur tempor ex elit est."
+                  }
+                }
+              ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": [
+                [
+                  "herobuttontext",
+                  {
+                    "__TYPE__": "FieldContent",
+                    "value": "radio",
+                    "type": "Text"
+                  }
+                ],
+                [
+                  "herobuttonlink",
+                  {
+                    "__TYPE__": "LinkContent",
+                    "value": {
+                      "__TYPE__": "ExternalLink",
+                      "url": "http://twitter.com"
+                    }
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

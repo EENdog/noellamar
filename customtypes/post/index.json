@@ -1,0 +1,88 @@
+{
+  "id": "post",
+  "label": "Post",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "Post Title",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID",
+          "placeholder": ""
+        }
+      },
+      "hidepagetitle": {
+        "type": "Boolean",
+        "config": {
+          "label": "HidePageTitle",
+          "placeholder_false": "Show",
+          "placeholder_true": "Hide",
+          "default_value": false
+        }
+      },
+      "excerpt": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Excerpt",
+          "placeholder": "Craft a short excerpt",
+          "allowTargetBlank": true,
+          "single": "paragraph"
+        }
+      },
+      "featuredimage": {
+        "type": "Image",
+        "config": {
+          "label": "FeaturedImage",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "metadescription": {
+        "type": "Text",
+        "config": {
+          "label": "MetaDescription",
+          "placeholder": ""
+        }
+      },
+      "metaimage": {
+        "type": "Image",
+        "config": {
+          "label": "MetaImage",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "canonicalurl": {
+        "type": "Text",
+        "config": {
+          "label": "CanonicalUrl",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "content": {
+              "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

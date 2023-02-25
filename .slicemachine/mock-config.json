@@ -1,0 +1,13 @@
+{
+  "slices": {
+    "Hero": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    }
+  },
+  "_cts": {
+    "post": {}
+  }
+}
