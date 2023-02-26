@@ -4,24 +4,26 @@
     "variation": "default",
     "primary": {
       "backgroundimage": {
-        "__TYPE__": "ImageContent",
         "origin": {
-          "id": "main",
-          "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-          "width": 3882,
-          "height": 2584
+          "id": "6QnEf_b47eA",
+          "url": "https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHwyMXx8d2FsbHxlbnwwfHx8fDE2NzczNTg5NTk&ixlib=rb-4.0.3&q=80",
+          "width": 5739,
+          "height": 3825
         },
-        "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-        "width": 3882,
-        "height": 2584,
+        "url": "https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzc0NjN8MHwxfHNlYXJjaHwyMXx8d2FsbHxlbnwwfHx8fDE2NzczNTg5NTk&ixlib=rb-4.0.3&q=80",
+        "width": 5739,
+        "height": 3825,
         "edit": {
+          "background": "transparent",
           "zoom": 1,
           "crop": {
             "x": 0,
             "y": 0
-          },
-          "background": "transparent"
+          }
         },
+        "credits": null,
+        "alt": null,
+        "__TYPE__": "ImageContent",
         "thumbnails": {}
       },
       "heroheading": {
@@ -30,8 +32,10 @@
           {
             "type": "heading2",
             "content": {
-              "text": "Hundred"
-            }
+              "text": "Noelle Lamar",
+              "spans": []
+            },
+            "direction": "ltr"
           }
         ]
       },
@@ -55,8 +59,8 @@
             "herobuttontext",
             {
               "__TYPE__": "FieldContent",
-              "value": "wolf",
-              "type": "Text"
+              "type": "Text",
+              "value": "Free Book"
             }
           ],
           [

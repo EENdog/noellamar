@@ -6,10 +6,10 @@ import { createClient } from '@/prismicio'
 import { components } from '@/slices'
 import * as prismicH from '@prismicio/helpers'
 
-const Post = ({ post, siteMetadata }) => {
+const Post = ({ navigation, post, siteMetadata }) => {
   const { data } = post
   return (
-    <Layout>
+    <Layout navigation={navigation}>
       <Head>
         <title>{`${prismicH.asText(data.title)} · ${prismicH.asText(
           siteMetadata.data.sitetitle
@@ -103,12 +103,19 @@ export async function getStaticProps({ params, previewData }) {
       },
     }
   }
+  let navigation = {}
+  try {
+    navigation = await client.getSingle('mainmenu')
+  } catch (error) {
+    navigation.data = {}
+  }
   const post = await client.getByUID('post', params.uid)
 
   return {
     props: {
       post,
       siteMetadata,
+      navigation,
     },
   }
 }

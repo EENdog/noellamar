@@ -1,0 +1,30 @@
+{
+  "menuitems": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "link",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "http://twitter.com"
+              }
+            }
+          ],
+          [
+            "linktext",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "bat",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+}

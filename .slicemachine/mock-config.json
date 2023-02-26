@@ -8,6 +8,9 @@
     }
   },
   "_cts": {
-    "post": {}
+    "post": {},
+    "mainmenu": {
+      "menuitems": {}
+    }
   }
 }

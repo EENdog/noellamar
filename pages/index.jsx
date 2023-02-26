@@ -4,12 +4,12 @@ import Heading from '@/components/Heading'
 import { createClient } from '@/prismicio'
 import * as prismicH from '@prismicio/helpers'
 
-export default function Home({ siteMetadata }) {
+export default function Home({ navigation, siteMetadata }) {
   const {
     data: { sitetitle, siteurl, sitemetadescription, sitemetaimage },
   } = siteMetadata
   return (
-    <Layout>
+    <Layout navigation={navigation}>
       <Head>
         <title>{`${prismicH.asText(sitetitle)}`}</title>
         <link rel="canonical" href={`${siteurl}`} />
@@ -67,9 +67,16 @@ export async function getStaticProps({ previewData }) {
       },
     }
   }
+  let navigation = {}
+  try {
+    navigation = await client.getSingle('mainmenu')
+  } catch (error) {
+    navigation.data = {}
+  }
 
   return {
     props: {
+      navigation,
       siteMetadata,
     },
   }

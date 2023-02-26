@@ -1,14 +1,12 @@
 import '../styles/globals.css'
 import Link from 'next/link'
 import Head from 'next/head'
-import { Quicksand } from '@next/font/google'
 // import Script from 'next/script'
 import { PrismicProvider, PrismicLink } from '@prismicio/react'
 import { PrismicPreview, PrismicNextImage } from '@prismicio/next'
 import { repositoryName } from '../prismicio'
 import Heading from '@/components/Heading'
 // import { getCookie } from 'cookies-next'
-const sans = Quicksand({ subsets: ['latin'] })
 
 const richTextComponents = {
   heading1: ({ children }) => (
@@ -67,7 +65,7 @@ const richTextComponents = {
   ),
   embed: ({ node }) => {
     return (
-      <div className="mx-auto max-w-screen-sm overflow-hidden rounded shadow-xl">
+      <div className="mx-auto my-6 max-w-screen-sm overflow-hidden rounded shadow-xl">
         <div
           className="aspect-w-16 aspect-h-9"
           dangerouslySetInnerHTML={{ __html: node.oembed.html }}
@@ -90,7 +88,7 @@ export default function App({ Component, pageProps }) {
   // const consent = getCookie(`localConsent`)
   return (
     <PrismicProvider
-      internalLinkComponent={props => <Link {...props} />}
+      internalLinkComponent={(props) => <Link {...props} />}
       richTextComponents={richTextComponents}
     >
       <PrismicPreview repositoryName={repositoryName}>
@@ -131,7 +129,7 @@ export default function App({ Component, pageProps }) {
             }}
           />
         )} */}
-        <Component {...pageProps} className={sans.className} />
+        <Component {...pageProps} />
       </PrismicPreview>
     </PrismicProvider>
   )

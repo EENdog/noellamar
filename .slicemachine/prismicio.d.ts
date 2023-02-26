@@ -6,6 +6,56 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for MainMenu documents */
+interface MainmenuDocumentData {
+    /**
+     * MenuItems field in *MainMenu*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: mainmenu.menuitems[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    menuitems: prismicT.GroupField<Simplify<MainmenuDocumentDataMenuitemsItem>>;
+}
+/**
+ * Item in MainMenu → MenuItems
+ *
+ */
+export interface MainmenuDocumentDataMenuitemsItem {
+    /**
+     * Link field in *MainMenu → MenuItems*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: mainmenu.menuitems[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.LinkField;
+    /**
+     * LinkText field in *MainMenu → MenuItems*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: mainmenu.menuitems[].linktext
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    linktext: prismicT.KeyTextField;
+}
+/**
+ * MainMenu document from Prismic
+ *
+ * - **API ID**: `mainmenu`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MainmenuDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<MainmenuDocumentData>, "mainmenu", Lang>;
 /** Content for Post documents */
 interface PostDocumentData {
     /**
@@ -181,7 +231,7 @@ interface SitemetadataDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SitemetadataDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SitemetadataDocumentData>, "sitemetadata", Lang>;
-export type AllDocumentTypes = PostDocument | SitemetadataDocument;
+export type AllDocumentTypes = MainmenuDocument | PostDocument | SitemetadataDocument;
 /**
  * Primary content in Content → Primary
  *
@@ -311,6 +361,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { PostDocumentData, PostDocumentDataSlicesSlice, PostDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, ContentSliceDefaultPrimary, ContentSliceDefault, ContentSliceVariation, ContentSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice };
+        export type { MainmenuDocumentData, MainmenuDocumentDataMenuitemsItem, MainmenuDocument, PostDocumentData, PostDocumentDataSlicesSlice, PostDocument, SitemetadataDocumentData, SitemetadataDocument, AllDocumentTypes, ContentSliceDefaultPrimary, ContentSliceDefault, ContentSliceVariation, ContentSlice, HeroSliceDefaultPrimary, HeroSliceDefaultItem, HeroSliceDefault, HeroSliceVariation, HeroSlice };
     }
 }
