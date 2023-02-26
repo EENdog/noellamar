@@ -9,7 +9,7 @@ import Pagination from '@/components/Pagination'
 
 const Page = ({ footer, navigation, page, posts, siteMetadata }) => {
   const { data } = page
-  console.log('posts', posts)
+
   return (
     <Layout navigation={navigation} footer={footer}>
       <Head>
