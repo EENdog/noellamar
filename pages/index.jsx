@@ -2,9 +2,11 @@ import Head from 'next/head'
 import Layout from '@/components/Layout'
 import Heading from '@/components/Heading'
 import { createClient } from '@/prismicio'
+import { components } from '../slices'
+import { SliceZone } from '@prismicio/react'
 import * as prismicH from '@prismicio/helpers'
 
-export default function Home({ navigation, siteMetadata }) {
+export default function Home({ navigation, page, siteMetadata }) {
   const {
     data: { sitetitle, siteurl, sitemetadescription, sitemetaimage },
   } = siteMetadata
@@ -33,21 +35,8 @@ export default function Home({ navigation, siteMetadata }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* BUILD YOUR HOMEPAGE HERE */}
-      <div>
-        <Heading
-          as="h1"
-          size="7xl"
-          className="mx-auto max-w-screen-2xl text-center lg:text-left"
-        >
-          This is a Homepage (/index.jsx) Heading1 Component set to 7xl
-        </Heading>
-        <p className="mx-auto mb-8 max-w-xl rounded-lg bg-neutral-200 p-6 text-center shadow-lg shadow-purple-300">
-          Code for the Heading component above...
-          <code className="inline-block">{`<Heading as="h2" size="7xl">This is a Homepage (/index.jsx) Heading1 Component set to 7xl</Heading>`}</code>
-        </p>
-        <p className="mx-auto max-w-xl rounded-lg bg-neutral-900 p-6 text-center text-neutral-200 shadow-lg shadow-purple-300">
-          Fonts used: Headings = Lora, Body = Quicksand
-        </p>
+      <div className="grid grid-cols-1 gap-y-4 md:gap-y-0">
+        <SliceZone slices={page?.data?.slices} components={components} />
       </div>
     </Layout>
   )
@@ -73,10 +62,17 @@ export async function getStaticProps({ previewData }) {
   } catch (error) {
     navigation.data = {}
   }
+  let page = {}
+  try {
+    page = await client.getSingle('homepage')
+  } catch (error) {
+    page = { data: {} }
+  }
 
   return {
     props: {
       navigation,
+      page,
       siteMetadata,
     },
   }

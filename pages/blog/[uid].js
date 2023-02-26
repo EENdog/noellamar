@@ -8,6 +8,10 @@ import * as prismicH from '@prismicio/helpers'
 
 const Post = ({ navigation, post, siteMetadata }) => {
   const { data } = post
+  const pubDate = new Date(post.first_publication_date).toLocaleDateString(
+    'en-US',
+    { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }
+  )
   return (
     <Layout navigation={navigation}>
       <Head>
@@ -79,6 +83,7 @@ const Post = ({ navigation, post, siteMetadata }) => {
             <PrismicRichText field={data.title} />
           </header>
         )}
+        <p className="text-center">{`Published on ${pubDate}`}</p>
         {data.slices.length > 0 && (
           <SliceZone slices={data.slices} components={components} />
         )}
@@ -124,7 +129,7 @@ export async function getStaticPaths() {
   const client = createClient()
   const posts = await client.getAllByType('post')
   return {
-    paths: posts.map((post) => prismicH.asLink(post)),
+    paths: posts.map(post => prismicH.asLink(post)),
     fallback: false,
   }
 }

@@ -4,7 +4,6 @@ import Link from 'next/link'
 import MenuItem from '../MenuItem'
 
 const Navbar = ({ data, serif }) => {
-  console.log(data)
   return (
     <nav
       className={`flex min-w-full items-center justify-between ${serif.className} min-h-[80px]`}
