@@ -23,8 +23,8 @@ const Hero = ({ slice }) => {
         fill
         className="z-0 object-cover"
       />
-      <div className="absolute inset-0 z-0 bg-purple-900 bg-opacity-70" />
-      <div className="absolute inset-0 z-0 bg-black bg-opacity-50" />
+      <div className="absolute inset-0 z-0 bg-purple-900 bg-opacity-30" />
+      <div className="absolute inset-0 z-0 bg-slate-900 bg-opacity-80" />
       <div className="flex flex-col items-center justify-center px-4">
         <div className="z-10 mx-auto my-4 max-w-screen-xl">
           <PrismicRichText

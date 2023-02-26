@@ -1,15 +1,17 @@
 import Head from 'next/head'
-import Link from 'next/link'
+import BlogCard from '@/components/BlogCard'
 import { createClient } from '@/prismicio'
 import * as prismicH from '@prismicio/helpers'
 import Layout from '@/components/Layout'
+import Heading from '@/components/Heading'
+import Pagination from '@/components/Pagination'
 
-const BlogPages = ({ posts, siteMetadata }) => {
+const BlogPages = ({ navigation, posts, siteMetadata }) => {
   const {
     data: { sitetitle, siteurl, sitemetadescription, sitemetaimage },
   } = siteMetadata
   return (
-    <Layout>
+    <Layout navigation={navigation}>
       <Head>
         <title>{`Blog Page ${posts.page} · ${prismicH.asText(
           sitetitle
@@ -31,15 +33,22 @@ const BlogPages = ({ posts, siteMetadata }) => {
 
         <meta property="twitter:image" content={sitemetaimage.url} />
       </Head>
-      <ul>
-        {posts.results.map((post, i) => {
-          return (
-            <li key={post.id + i}>
-              <Link href={post.url}>{prismicH.asText(post.data.title)}</Link>
-            </li>
-          )
-        })}
-      </ul>
+      <header className="bg-base-100 py-4 text-center md:py-6 lg:py-8 xl:py-10">
+        <Heading as="h2" size="4xl">{`Blog: Page ${posts.page}`}</Heading>
+      </header>
+      <section className="flex flex-col items-center px-4">
+        <Pagination {...posts} />
+        {posts.results.length > 0 ? (
+          <ol className="flex flex-wrap justify-center gap-6">
+            {posts.results.map((post, i) => {
+              return <BlogCard as="li" key={post.id} {...post} index={i} />
+            })}
+          </ol>
+        ) : (
+          <p>No Posts are Published Yet. Check back soon</p>
+        )}
+      </section>
+      <Pagination {...posts} />
     </Layout>
   )
 }
@@ -88,8 +97,15 @@ export async function getStaticProps({ params, previewData }) {
       notFound: true,
     }
   }
+  let navigation = {}
+  try {
+    navigation = await client.getSingle('mainmenu')
+  } catch (error) {
+    navigation.data = {}
+  }
   return {
     props: {
+      navigation,
       posts,
       siteMetadata,
     },

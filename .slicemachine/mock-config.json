@@ -12,6 +12,7 @@
     "mainmenu": {
       "menuitems": {}
     },
-    "homepage": {}
+    "homepage": {},
+    "page": {}
   }
 }
