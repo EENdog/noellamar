@@ -11,7 +11,7 @@ const Content = ({ slice }) => {
     default:
       return (
         <section
-          className={`prose mx-auto p-4 md:prose-lg lg:prose-xl xl:prose-2xl prose-headings:text-purple-200 prose-p:text-purple-100`}
+          className={`prose mx-auto p-4 md:prose-lg lg:prose-xl xl:prose-2xl prose-headings:text-purple-200 prose-p:text-purple-100 prose-strong:text-purple-300 prose-em:text-purple-200`}
         >
           <PrismicRichText field={slice.primary.content} />
         </section>
