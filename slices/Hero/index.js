@@ -1,5 +1,5 @@
 import React from 'react'
-import { Cinzel_Decorative } from '@next/font/google'
+import { Cinzel_Decorative } from "next/font/google"
 import { PrismicLink, PrismicRichText } from '@prismicio/react'
 import Image from 'next/image'
 import Heading from '@/components/Heading'

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Cinzel_Decorative, Urbanist } from '@next/font/google'
+import { Cinzel_Decorative, Urbanist } from "next/font/google"
 import Navbar from './Navbar'
 import Footer from './Footer'
 import { HiChevronUp } from 'react-icons/hi'

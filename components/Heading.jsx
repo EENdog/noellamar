@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Cinzel_Decorative } from '@next/font/google'
+import { Cinzel_Decorative } from "next/font/google"
 const serif = Cinzel_Decorative({ weight: '700', subsets: ['latin'] })
 const Heading = ({ as: Comp = 'h2', size = null, children, className }) => {
   return (
