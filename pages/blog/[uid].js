@@ -130,6 +130,6 @@ export async function getStaticPaths() {
   const posts = await client.getAllByType('post')
   return {
     paths: posts.map(post => prismicH.asLink(post)),
-    fallback: false,
+    fallback: 'blocking',
   }
 }
