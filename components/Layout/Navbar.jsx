@@ -38,6 +38,7 @@ const Navbar = ({
               className="lg:hidden"
             >
               <HiMenu className="mr-6 h-10 w-10 text-purple-300" />
+              <p className="sr-only">Open Navigation Menu</p>
             </button>
           </>
         )}
